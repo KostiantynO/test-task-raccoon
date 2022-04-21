@@ -1,1 +1,1 @@
-console.log('About page');
+// console.log('About page');

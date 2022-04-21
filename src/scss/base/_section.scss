@@ -3,24 +3,34 @@
 }
 
 .section__title {
-  position: relative;
   margin-bottom: 100px;
 
-  &::before,
-  &::after {
-    position: absolute;
-    content: '';
-    top: 50%;
-    width: 40px;
-    height: 1px;
-    background-color: red;
-  }
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 
-  &::before {
-    left: 0;
-  }
+  color: #1d1f2e;
 
-  &::after {
-    right: 0;
+  &-text {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      width: 30px;
+      height: 1px;
+      background-color: $theme-light-second;
+    }
+    &::before {
+      left: -45px;
+    }
+    &::after {
+      right: -45px;
+    }
   }
 }

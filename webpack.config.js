@@ -15,7 +15,7 @@ const pagesHTML = pages.map(
       template: path.resolve(__dirname, `./src/html/${page}.html`), // template file
       filename: `${page}.html`, // output file
       chunks: [`${page}`], // подключит js файл в head page.html.
-    }),
+    })
 );
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
       config[page] = path.resolve(__dirname, `./src/js/pages/${page}.js`);
       return config;
     },
-    { main: path.resolve(__dirname, './src/index.js') },
+    { main: path.resolve(__dirname, './src/index.js') }
   ),
 
   output: {
@@ -32,9 +32,12 @@ module.exports = {
     filename: '[name].bundle.js',
   },
 
+  devtool: 'source-map',
+
   module: {
     rules: [
       { test: /\.txt$/, use: 'raw-loader' },
+
       // CSS, PostCSS, and Sass
       {
         // test: /\.scss$/i,
@@ -43,12 +46,36 @@ module.exports = {
         use: [
           // 'style-loader', // инлайнит стили в <style> перед </head>, оно уже не надо - дает ошибку, если включить вместе с mini-css loader.
           MiniCssExtractPlugin.loader, // это просто ссылка на загрузчик, она из нашего js файла вытянет строку css-ую и сделает отдельный css файлик красивый.
-          'css-loader', // переведет css в commonJS модуль
-          'postcss-loader',
-          'sass-loader', // переведет sass в css
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          // переведет css в commonJS модуль
+          // 'postcss-loader',
+
+          {
+            loader: 'postcss-loader', // переведет css в commonJS модуль
+            options: {
+              sourceMap: true,
+            },
+          },
+
+          {
+            loader: 'sass-loader', // переведет sass в css
+            options: {
+              additionalData: '@import "./src/scss/utils/_variables.scss";',
+              sourceMap: true,
+            },
+          },
         ],
       },
-      { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
 
       // Images
       {
@@ -57,6 +84,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'file-loader',
         options: {
+          name: '[name][hash].[ext]',
           outputPath: 'images',
         },
       },
@@ -68,17 +96,19 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'file-loader',
         options: {
+          name: '[name][hash].[ext]',
           outputPath: 'images/svg',
         },
       },
 
       // Fonts and SVGs
       {
-        // test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        test: /\.(woff(2)?|eot|ttf|otf)$/,
-        type: 'asset/inline',
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name][hash][ext]',
+        },
       },
-
       // html
       // {
       //   test: /\.html$/,

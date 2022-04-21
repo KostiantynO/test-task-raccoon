@@ -1,0 +1,45 @@
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.item {
+  text-align: center;
+}
+
+.thumb {
+  max-width: 460px;
+  margin-bottom: 35px;
+}
+
+// .meta {}
+
+.name {
+  margin-bottom: 5px;
+}
+
+// .prices {}
+
+// $ 99.00 USD
+.normalPrice {
+  font-size: 16px;
+  line-height: 1.75;
+  color: $theme-light-normal-price;
+}
+
+// $50.00
+.salePrice {
+  margin-right: 10px;
+  font-size: 19px;
+  line-height: 1.68;
+  color: $theme-light-accent;
+}
+
+// $ 69.00 USD
+.oldPrice {
+  text-decoration-line: line-through;
+  font-size: 16px;
+  line-height: 1.75;
+  color: $theme-light-old-price;
+}

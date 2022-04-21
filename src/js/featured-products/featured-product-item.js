@@ -1,12 +1,14 @@
+import scss from './featured-product-list.module.scss';
+
 export const featuredProductItem = ({
   name = '',
   webp = '',
   webp2x = '',
-  basePrice = '',
-  discountPrice = '',
+  normalPrice = '',
+  salePrice = '',
 }) => `
-<li class="featured-product__item">
-  <div class="featured-product__thumb">
+<li class="${scss.item}">
+  <div class="${scss.thumb}">
     <img srcset="${webp},
                  ${webp2x} 2x"
       src="${webp}"
@@ -14,13 +16,18 @@ export const featuredProductItem = ({
     >
   </div>
 
-  <div class="featured-product__meta">
-    <p class="featured-product__name">${name}</p>
+  <div class=${scss.meta}>
+    <p class="${scss.name}">${name}</p>
 
-    <div class="featured-product__prices">
-        <span class="featured-product__price--base">${basePrice}</span>
+    <div class="${scss.prices}">
+
+
         ${
-          discountPrice && `<span class="featured-product__price--discount">${discountPrice}</span>`
+          salePrice
+            ? `
+<span class="${scss.salePrice}">${salePrice}</span>
+<span class="${scss.oldPrice}">${normalPrice}</span>`
+            : `<span class="${scss.normalPrice}">${normalPrice}</span>`
         }
     </div>
   </div>
