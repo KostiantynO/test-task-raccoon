@@ -1,0 +1,20 @@
+@import '../featured-products/featured-product-list.module.scss';
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 50px;
+  column-gap: 17px;
+}
+// .item {}
+// .link {}
+.thumb {
+  max-width: 300px;
+}
+// .image {}
+// .meta {}
+// .name {}
+// .prices {}
+// .normalPrice {}
+// .salePrice {}
+// .oldPrice {}

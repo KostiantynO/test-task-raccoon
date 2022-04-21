@@ -1,10 +1,11 @@
 import { list, makeItemsMarkup } from '../utils';
 import { featuredProductItem } from './featured-product-item';
 
-import imageA from '../../assets/images/photos/golden-designers-mug.webp';
-import imageA2x from '../../assets/images/photos/golden-designers-mug@2x.webp';
-import imageB from '../../assets/images/photos/pink-premium-ceramic.webp';
-import imageB2x from '../../assets/images/photos/pink-premium-ceramic@2x.webp';
+import imageA from '../../assets/images/photos/featured/golden-designers-mug.webp';
+import imageA2x from '../../assets/images/photos/featured/golden-designers-mug@2x.webp';
+import imageB from '../../assets/images/photos/featured/pink-premium-ceramic.webp';
+import imageB2x from '../../assets/images/photos/featured/pink-premium-ceramic@2x.webp';
+
 import scss from './featured-product-list.module.scss';
 
 const products = [
@@ -19,8 +20,8 @@ const products = [
     name: 'pink premium ceramic',
     webp: imageB,
     webp2x: imageB2x,
-    salePrice: '$55 USD',
-    normalPrice: '$99 USD',
+    salePrice: '$50.00',
+    normalPrice: '$ 69.00 USD',
   },
 ];
 

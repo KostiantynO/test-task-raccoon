@@ -32,11 +32,11 @@ module.exports = {
     filename: '[name].bundle.js',
   },
 
-  devtool: 'source-map',
+  // devtool: 'source-map',
 
   module: {
     rules: [
-      { test: /\.txt$/, use: 'raw-loader' },
+      { test: /\.txt$/, exclude: /node_modules/, use: 'raw-loader' },
 
       // CSS, PostCSS, and Sass
       {
@@ -52,18 +52,9 @@ module.exports = {
               sourceMap: true,
             },
           },
-          // переведет css в commonJS модуль
-          // 'postcss-loader',
-
+          'postcss-loader', // переведет css в commonJS модуль
           {
-            loader: 'postcss-loader', // переведет css в commonJS модуль
-            options: {
-              sourceMap: true,
-            },
-          },
-
-          {
-            loader: 'sass-loader', // переведет sass в css
+            loader: 'sass-loader', // переведет SASS в CSS
             options: {
               additionalData: '@import "./src/scss/utils/_variables.scss";',
               sourceMap: true,
@@ -80,23 +71,22 @@ module.exports = {
       // Images
       {
         test: /\.(?:jpg|png|jpeg|ico|gif|avif|webp|webp2)$/i,
-        // dependency: { not: ['url'] },
+        dependency: { not: ['url'] },
         exclude: /node_modules/,
-        loader: 'file-loader',
-        options: {
-          name: '[name][hash].[ext]',
-          outputPath: 'images',
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/photos/[name][ext]',
         },
       },
 
       // Images
       {
         test: /\.(?:svg)$/i,
-        // dependency: { not: ['url'] },
+        dependency: { not: ['url'] },
         exclude: /node_modules/,
         loader: 'file-loader',
         options: {
-          name: '[name][hash].[ext]',
+          name: '[name].[ext]',
           outputPath: 'images/svg',
         },
       },
@@ -104,9 +94,10 @@ module.exports = {
       // Fonts and SVGs
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        exclude: /node_modules/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/fonts/[name][hash][ext]',
+          filename: 'fonts/[name][ext]',
         },
       },
       // html
