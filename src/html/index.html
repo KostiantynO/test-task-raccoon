@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div id="root">
+      <!--  -->
+      <header>
+        <a href="./">Home</a>
+        <!-- <a href="./goods.html">Goods</a> -->
+        <!-- <a href="./orders.html">Orders</a> -->
+        <!-- <a href="./contacts.html">Contacts</a> -->
+        <!-- <a href="./about.html">About us</a> -->
+        <!-- <a href="./users.html">Users</a> -->
+      </header>
+
+      <section class="section">
+        <div class="container">
+          <h1>Home page</h1>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section__title">Featured products</h2>
+          <ul class="featured-products__list" data-featured-products></ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section__title">More products</h2>
+          <ul class="more-products__list" data-more-products></ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
