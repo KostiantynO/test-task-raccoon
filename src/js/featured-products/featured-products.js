@@ -6,7 +6,7 @@ import imageA2x from '../../assets/images/photos/featured/golden-designers-mug@2
 import imageB from '../../assets/images/photos/featured/pink-premium-ceramic.webp';
 import imageB2x from '../../assets/images/photos/featured/pink-premium-ceramic@2x.webp';
 
-import scss from './featured-product-list.module.scss';
+import scss from './featured-products-list.module.scss';
 
 const products = [
   {

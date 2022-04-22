@@ -56,7 +56,11 @@ module.exports = {
           {
             loader: 'sass-loader', // переведет SASS в CSS
             options: {
-              additionalData: '@import "./src/scss/utils/_variables.scss";',
+              additionalData: `
+                @import "./src/scss/utils/_variables.scss";
+                @import "./src/scss/utils/_breakpoints.scss";
+              `,
+
               sourceMap: true,
             },
           },

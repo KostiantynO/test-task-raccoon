@@ -1,6 +1,6 @@
-import scss from './featured-products-list.module.scss';
+import scss from './more-products-list.module.scss';
 
-export const featuredProductItem = ({
+export const moreProductItem = ({
   name = '',
   webp = '',
   webp2x = '',
