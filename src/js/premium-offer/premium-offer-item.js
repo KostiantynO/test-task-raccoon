@@ -9,8 +9,10 @@ export const premiumOfferItem = ({
 <li class="${scss.item}">
   <a href="#${hashLink}" class="${scss.link}">
     <div class="${scss.thumb}">
-      <img class="${scss.image}" srcset="${webp},
-                  ${webp2x} 2x"
+      <img
+        class="${scss.image}"
+        srcset="${webp},
+                ${webp2x} 2x"
         src="${webp}"
         alt="${name}"
       >

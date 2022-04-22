@@ -40,7 +40,7 @@ const premiumOfferMarkup = makeItemsMarkup(premiumOffer, premiumOfferItem);
 const leftSide = list(premiumOfferMarkup, scss.list);
 
 const rightSide = `
-<div class="${scss.helloWorld}">
+<div class="${scss.rightSideWrapper}">
   <p class="${scss.rightTitle}">Premium Offer</p>
   <h2 class="${scss.callToAction}">Get our Coffee Magazine</h2>
   <p class="${scss.offerDescription}">The most versatile furniture system ever created. Designed to fit your life.</p>
@@ -54,7 +54,7 @@ const rightSide = `
 </div>
 `;
 export const premiumOfferContent = `
-<div class="${scss.flexWrapper}">
+<div class="${scss.premiumOfferSectionWrapper}">
   ${leftSide}
   ${rightSide}
 </div>

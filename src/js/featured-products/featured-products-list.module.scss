@@ -22,7 +22,6 @@
 .link {
   display: block;
   flex-grow: 1;
-  border-radius: 4px;
   transition: $time $cubic;
   transition-property: color, box-shadow, transform;
 
@@ -45,7 +44,6 @@
   max-width: 460px;
   margin: 0 auto 20px;
   contain: content;
-  border-radius: 4px;
 
   @media screen and (min-width: $tablet) {
     margin-bottom: 35px;
