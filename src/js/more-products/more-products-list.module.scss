@@ -3,8 +3,8 @@
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 50px;
-  column-gap: 17px;
+  row-gap: 30px;
+  column-gap: 10px;
 
   @media screen and (min-width: $desktop) {
     grid-template-columns: 1fr 1fr 1fr;

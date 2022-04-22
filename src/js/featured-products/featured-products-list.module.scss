@@ -1,7 +1,7 @@
 .list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 10px;
 
   @media screen and (min-width: $tablet) {
     grid-template-columns: 1fr 1fr;
@@ -43,12 +43,12 @@
 
 .thumb {
   max-width: 460px;
-  margin: 0 auto 35px;
+  margin: 0 auto 20px;
   contain: content;
   border-radius: 4px;
 
   @media screen and (min-width: $tablet) {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
   }
 }
 

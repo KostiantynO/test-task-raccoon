@@ -1,0 +1,102 @@
+.flexWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  @media screen and (min-width: $desktop) {
+    gap: 20px;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: (280px * 100% / 460px) (160px * 100% / 460px);
+  gap: 10px;
+
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: 280px 160px;
+    gap: 20px;
+  }
+}
+
+.item {
+  &:first-of-type {
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+
+  &:nth-of-type(2) {
+    align-self: flex-end;
+  }
+}
+
+// .thumb {}
+// .image {}
+
+.helloWorld {
+  padding: 1px 20px 5px;
+
+  @media screen and (min-width: $desktop) {
+    padding: 1px 47px 8px 60px;
+  }
+}
+
+// Premium Offer
+.rightTitle {
+  margin-bottom: 8px;
+
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $theme-light-main;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 14px;
+    font-size: 12px;
+  }
+}
+
+.callToAction {
+  margin-bottom: 8px;
+
+  font-size: clamp(20px, 5vw, 36px);
+  font-weight: 400;
+  line-height: 1.39;
+  color: $theme-light-main;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 15px;
+    font-size: 36px;
+  }
+}
+
+.offerDescription {
+  margin-bottom: 25px;
+
+  font-size: 12px;
+  line-height: 1.75;
+  color: $theme-light-normal-price;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+  }
+}
+
+.startShoppingButton {
+}
+
+// Start Shopping
+.startShoppingButton {
+  padding: 9px 24px;
+
+  font-size: 12px;
+  line-height: 1.5;
+  color: $theme-light-white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  background: $theme-light-main;
+}

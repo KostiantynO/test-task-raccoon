@@ -15,6 +15,7 @@ const products = [
     webp2x: imageA2x,
     salePrice: '',
     normalPrice: '$99 USD',
+    hashLink: 'featured-product',
   },
   {
     name: 'pink premium ceramic',
@@ -22,12 +23,10 @@ const products = [
     webp2x: imageB2x,
     salePrice: '$50.00',
     normalPrice: '$ 69.00 USD',
+    hashLink: 'featured-product',
   },
 ];
 
-export const featuredProductsMarkup = makeItemsMarkup(
-  products,
-  featuredProductItem
-);
+const featuredProductsMarkup = makeItemsMarkup(products, featuredProductItem);
 
 export const featuredProductList = list(featuredProductsMarkup, scss.list);

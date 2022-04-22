@@ -4,7 +4,6 @@ import { moreProductItem } from './more-product-item';
 import scss from './more-products-list.module.scss';
 
 const importAll = r => r.keys().map(r);
-
 const images = importAll(
   require.context(
     '../../assets/images/photos/more/',
@@ -20,6 +19,7 @@ const moreProducts = [
     name: 'Red Love Cup',
     salePrice: '$25.00',
     normalPrice: '$ 37.00 USD',
+    hashLink: 'more-products',
   },
   {
     webp: images[2],
@@ -27,6 +27,7 @@ const moreProducts = [
     name: 'Black Tea Cup',
     salePrice: '$15.00',
     normalPrice: '$ 29.00 USD',
+    hashLink: 'more-products',
   },
   {
     webp: images[4],
@@ -34,6 +35,7 @@ const moreProducts = [
     name: 'B&W Essentials Mug',
     salePrice: '',
     normalPrice: '$ 19.00 USD',
+    hashLink: 'more-products',
   },
   {
     webp: images[6],
@@ -41,6 +43,7 @@ const moreProducts = [
     name: 'Winter Style Mug',
     salePrice: '',
     normalPrice: '$ 25.00 USD',
+    hashLink: 'more-products',
   },
   {
     webp: images[8],
@@ -48,6 +51,7 @@ const moreProducts = [
     name: 'Ceramic Tea',
     salePrice: '',
     normalPrice: '$ 46.00 USD',
+    hashLink: 'more-products',
   },
   {
     webp: images[10],
@@ -55,12 +59,10 @@ const moreProducts = [
     name: 'No Handle Bar Cup',
     salePrice: '',
     normalPrice: '$ 34.00 USD',
+    hashLink: 'more-products',
   },
 ];
 
-export const moreProductsMarkup = makeItemsMarkup(
-  moreProducts,
-  moreProductItem
-);
+const moreProductsMarkup = makeItemsMarkup(moreProducts, moreProductItem);
 
 export const moreProductsList = list(moreProductsMarkup, scss.list);
