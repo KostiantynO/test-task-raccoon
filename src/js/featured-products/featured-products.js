@@ -29,4 +29,7 @@ const products = [
 
 const featuredProductsMarkup = makeItemsMarkup(products, featuredProductItem);
 
-export const featuredProductList = list(featuredProductsMarkup, scss.list);
+export const featuredProductList = list(
+  featuredProductsMarkup,
+  scss.listWithSlider
+);

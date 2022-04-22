@@ -4,6 +4,7 @@ import { getRefs } from './js/getRefs';
 import './scss/main.scss';
 import { insertMarkup } from './js/utils';
 import { premiumOfferContent } from './js/premium-offer/premium-offer';
+import { initSlider } from './js/slider/slider';
 import { initListeners } from './js/event-listeners';
 
 const { featuredProducts, moreProducts, premiumOffer } = getRefs();
@@ -11,4 +12,6 @@ const { featuredProducts, moreProducts, premiumOffer } = getRefs();
 insertMarkup(featuredProducts, featuredProductList);
 insertMarkup(moreProducts, moreProductsList);
 insertMarkup(premiumOffer, premiumOfferContent);
+
+initSlider();
 initListeners();

@@ -65,4 +65,4 @@ const moreProducts = [
 
 const moreProductsMarkup = makeItemsMarkup(moreProducts, moreProductItem);
 
-export const moreProductsList = list(moreProductsMarkup, scss.list);
+export const moreProductsList = list(moreProductsMarkup, scss.listWithSlider);

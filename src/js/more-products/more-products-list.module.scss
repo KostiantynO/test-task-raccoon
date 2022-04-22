@@ -1,41 +1,113 @@
-@import '../featured-products/featured-products-list.module.scss';
-
-.list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 30px;
-  column-gap: 10px;
-
-  @media screen and (min-width: $desktop) {
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 50px;
-    column-gap: 17px;
-  }
+.listWithSlider {
+  background-color: transparent;
 }
+
 .item {
-  &:not(:nth-of-type(1)) {
-    display: block;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.link {
+  display: block;
+  flex-grow: 1;
+  transition: $time $cubic;
+  transition-property: color, box-shadow, transform;
+
+  &:hover,
+  &:focus {
+    color: $theme-light-accent;
+    box-shadow: 1px 2px 3px 2px rgba($theme-light-accent, 0.1);
   }
 
-  @media screen and (max-width: $tablet) {
-    &:nth-of-type(n + 5) {
-      display: none;
-    }
+  &:hover {
+    outline: 1px solid rgba($theme-light-accent, 0.21);
+  }
+
+  &:focus {
+    outline: 1px solid rgba($theme-light-accent, 1);
   }
 }
-// .link {}
+
 .thumb {
-  max-width: 300px;
+  max-width: 460px;
+  margin: 0 auto 20px;
+  contain: content;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 35px;
+  }
 }
+
 .image {
+  transition: $time $cubic;
+  transition-property: filter, transform;
+
   .link:hover &,
   .link:focus & {
-    filter: brightness(1.02);
+    filter: brightness(1.05);
+    transform: scale(1.05);
   }
 }
+
 // .meta {}
-// .name {}
+
+// Black Tea Cup
+.name {
+  margin-bottom: 5px;
+
+  font-size: clamp(14px, 4vw, 20px);
+  line-height: 1.5;
+  color: $theme-light-main;
+  text-transform: capitalize;
+
+  transition: $time $cubic color;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+
+  .link:hover &,
+  .link:focus & {
+    color: $theme-light-accent;
+  }
+}
+
 // .prices {}
-// .normalPrice {}
-// .salePrice {}
-// .oldPrice {}
+
+// $ 99.00 USD
+.normalPrice {
+  font-size: 12px;
+  line-height: 1.75;
+  color: $theme-light-normal-price;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+  }
+}
+
+// $50.00
+.salePrice {
+  margin-right: 4px;
+
+  font-size: 15px;
+  line-height: 1.68;
+  color: $theme-light-accent;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 19px;
+    margin-right: 10px;
+  }
+}
+
+// $ 69.00 USD
+.oldPrice {
+  text-decoration-line: line-through;
+  font-size: 12px;
+  line-height: 1.75;
+  color: $theme-light-old-price;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+  }
+}
